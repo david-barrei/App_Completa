@@ -8,3 +8,6 @@ from django.views.generic import TemplateView
 
 class Home(TemplateView):
     template_name='crud/home.html'
+
+class compras(TemplateView):
+    template_name='crud/compras.html'
