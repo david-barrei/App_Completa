@@ -8,6 +8,7 @@ app_name = "clientes_app"
 urlpatterns = [
     path('',views.Home.as_view(), name='home'),
     path('compras/',views.compras.as_view(), name='compras'),
+    path('login/',views.login.as_view(), name='login'),
 
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)#Carga imagenes
 
