@@ -5,6 +5,11 @@ from django.contrib.auth.models import User #Para saber cual es el usuario hizo 
 
 class Area(models.Model):
     nom_Area=models.CharField(max_length=100, verbose_name ='Area', null= False, blank=False)
+    estado = models.BooleanField(default=True)
+    fecha_registro = models.DateField(auto_now_add=True)
+    fecha_modificacion = models.DateField(auto_now=True)
+    usuario = models.ForeignKey(User, verbose_name='Usuario', on_delete=models.CASCADE)
+
 
     def __str__(self):
         fila = self.nom_Area
