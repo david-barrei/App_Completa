@@ -9,13 +9,17 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 class Home(LoginRequiredMixin,TemplateView):
     template_name='crud/home.html'
-    login_url ='/admin'
+    login_url ='clientes_app/login'
 
 
 class compras(LoginRequiredMixin,TemplateView):
     template_name='crud/compras.html'
-    login_url ='/admin'
+    login_url ='clientes_app:login'
 
-class login(LoginRequiredMixin,TemplateView):
+class loginView(LoginRequiredMixin,TemplateView):
     template_name='crud/login.html'
-    login_url ='/admin'
+    login_url ='clientes_app:login'
+
+
+
+    

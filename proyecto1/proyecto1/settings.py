@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'clientes',
     'crispy_forms',
     'crispy_bootstrap5',
+    'persona',
 ]
 
 CRISPY_ALLOWEB_TEMPLATE_PACKS= "bootstrap4"
@@ -120,6 +121,10 @@ STATIC_URL = 'static/'
 
 #archivos staticos
 STATICFILES_DIRS=(os.path.join(BASE_DIR,'static/'),)
+
+#redireccion de login
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = 'login'
 
 #imagenes y path
 MEDIA_ROOT=os.path.join(BASE_DIR,'')
