@@ -24,3 +24,20 @@ carrera = (
     ('Ciencias de la computacion','Ciencias de la computacion')
     ('Programador','Programador')
 )
+
+class Personal(models.Model):
+    nom = models.CharField(max_length=50, verbose_name='Nombre', blank= False, null= False)
+    ap = models.CharField(max_length=50, verbose_name='Apellido Materno', blank= False, null= False)
+    am = models.CharField(max_length=50, verbose_name='Apellido Paterno', blank= False, null= False)
+    foto = models.ImageField(upload_to='imagenes/', verbose_name='Foto',blank=True, null=True)
+    area = models.ForeignKey(Area, verbose_name='Area', on_delete= models.CASCADE)
+    estudios = models.ForeignKey(Estudios, verbose_name='Estudios', on_delete= models.CASCADE)
+    carrera = models.CharField(max_length=30,verbose_name='Carrera' choices=carrera)
+
+    def __str__(self):
+        fila = str(self.id) + '-' + self.nom + '-' + self.ap
+        return fila
+    
+    def delete(self, using=None, keep_parents=False):
+        self.foto.storage.delete(self.foto.name)
+        super().delete()
