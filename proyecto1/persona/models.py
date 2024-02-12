@@ -2,20 +2,18 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User #Para saber cual es el usuario hizo el cambio
 # Create your models here.
+from clientes.models import DatosBase
 
-class Area(models.Model):
+class Area(DatosBase):
     nom_Area=models.CharField(max_length=100, verbose_name ='Area', null= False, blank=False)
-    estado = models.BooleanField(default=True)
-    fecha_registro = models.DateField(auto_now_add=True)
-    fecha_modificacion = models.DateField(auto_now=True)
-    usuario = models.ForeignKey(User, verbose_name='Usuario', on_delete=models.CASCADE)
+    
 
 
     def __str__(self):
         fila = self.nom_Area
         return fila
     
-class Estudios(models.Model):
+class Estudios(DatosBase):
     nom_Estudios=models.CharField( max_length=100, blank=False, null = False)
 
     def __str__(self):
@@ -30,7 +28,7 @@ carrera = (
     ('Programador','Programador')
 )
 
-class Personal(models.Model):
+class Personal(DatosBase):
     nom = models.CharField(max_length=50, verbose_name='Nombre', blank= False, null= False)
     ap = models.CharField(max_length=50, verbose_name='Apellido Materno', blank= False, null= False)
     am = models.CharField(max_length=50, verbose_name='Apellido Paterno', blank= False, null= False)

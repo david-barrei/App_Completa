@@ -9,3 +9,8 @@ class DatosBase(models.Model):
     fecha_registro = models.DateField(auto_now_add=True)
     fecha_modificacion = models.DateField(auto_now=True)
     usuario = models.ForeignKey(User, verbose_name='Usuario', on_delete=models.CASCADE)
+
+    #No lo tome en cuenta
+    class Meta:
+        abstract =True
+        
