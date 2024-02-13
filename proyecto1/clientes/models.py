@@ -10,7 +10,7 @@ class DatosBase(models.Model):
     fecha_modificacion = models.DateField(auto_now=True)
     usuario = models.ForeignKey(User, verbose_name='Usuario', on_delete=models.CASCADE)
 
-    #No lo tome en cuenta
+    #No lo toma en cuenta
     class Meta:
         abstract =True
         
