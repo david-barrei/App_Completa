@@ -44,5 +44,4 @@ class Personal(DatosBase):
     def delete(self, using=None, keep_parents=False):
         self.foto.storage.delete(self.foto.name)
         super().delete()
-    #Listado de personal
-    #Error 404
+    
