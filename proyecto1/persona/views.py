@@ -3,7 +3,7 @@ from .models import Personal
 from .forms import Personalform
 from django.urls import reverse_lazy, reverse
 
-from django.views.generic import TemplateView, ListView, CreateView
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView
 
 # Create your views here.
 class Inicio(TemplateView):
@@ -23,3 +23,21 @@ class Crear(CreateView):
 
     def get_success_url(self, **kwargs):
         return reverse("personal_app:lista")
+
+class Editar(UpdateView):
+    template_name = 'crud/editar.html'
+    model = Personal
+    form_class = Personalform
+    pk_url_kwarg= 'pk'
+
+    def get_success_url(self,**kwargs):
+        return reverse('personal_app:lista')
+    
+class Eliminar(DeleteView):
+    template_name = "crud/eliminar.html"
+    model =Personal
+    pk_url_kwarg ='pk'
+
+    def get_success_url(self,**kwargs):
+        return reverse('personal_app:lista')
+

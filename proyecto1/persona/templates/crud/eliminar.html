@@ -1,0 +1,19 @@
+{%  extends "base/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block titulo %} Agregando Pesona {% endblock titulo%}
+{% block body %}
+
+<h4 class="card-title"> Persona </4>
+    <p>Seguro desea eliminar</p>
+    <form  method="post" id="fr-eliminar" autocomplete="off">
+        {% csrf_token %}
+        <button name="btn-guardar" id="btn_guardar" class="btn btn-danger" type="submit"> Guardar </button>
+        <a name="btnCancelar" id="btnCancelar" class="btn btn-primary" href="{% url 'personal_app:lista' %}" role="button">Eliminar</a>
+    </form>
+
+{% endblock body %}
+
+
+
+
