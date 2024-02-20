@@ -8,7 +8,6 @@ class Area(DatosBase):
     nom_Area=models.CharField(max_length=100, verbose_name ='Area', null= False, blank=False)
     
 
-
     def __str__(self):
         fila = self.nom_Area
         return fila
@@ -28,7 +27,7 @@ carrera = (
     ('Programador','Programador')
 )
 
-class Personal(DatosBase):
+class Personal(DatosBase):#Extiende
     nom = models.CharField(max_length=50, verbose_name='Nombre', blank= False, null= False)
     ap = models.CharField(max_length=50, verbose_name='Apellido Materno', blank= False, null= False)
     am = models.CharField(max_length=50, verbose_name='Apellido Paterno', blank= False, null= False)
@@ -45,3 +44,4 @@ class Personal(DatosBase):
         self.foto.storage.delete(self.foto.name)
         super().delete()
     
+#Agregando Modelos
