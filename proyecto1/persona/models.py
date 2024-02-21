@@ -19,7 +19,7 @@ class Estudios(DatosBase):
         fila = self.nom_Estudios
         return fila
 
-carrera = (
+carrera = (  #Choices para escojer el tipo de carrera
     ('sistemas','sistemas'),
     ('TICs','TICs'),
     ('Sofware','Sofware'),
