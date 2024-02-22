@@ -11,4 +11,4 @@ urlpatterns = [
     path('editar/<pk>',views.Editar.as_view(), name='editar'),
     path('eliminar/<pk>',views.Eliminar.as_view(), name='eliminar'),
     
-]
+]#urls 

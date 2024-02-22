@@ -33,7 +33,7 @@ class Editar(UpdateView):
     def get_success_url(self,**kwargs):
         return reverse('personal_app:lista')
     
-class Eliminar(DeleteView):
+class Eliminar(DeleteView):#Clase de eliminar por pk
     template_name = "crud/eliminar.html"
     model =Personal
     pk_url_kwarg ='pk'
