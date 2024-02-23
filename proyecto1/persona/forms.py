@@ -17,3 +17,4 @@ class Personalform(forms.ModelForm):
         self.fields['carrera'].choices =[("","Selecciona"),] + list(self.fields["carrera"].choices)[1:]
         self.fields['ap'].required=True
         #self.fields['am'].required=False
+        #Este es el formulario para los campos
