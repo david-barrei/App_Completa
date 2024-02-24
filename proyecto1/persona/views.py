@@ -12,9 +12,10 @@ class Inicio(TemplateView):
 class Lista(ListView):
     template_name = 'crud/lista.html'
     model = Personal
-    ordering = '-id'
+    ordering = '-id' # ordenar desendiente
     queryset = Personal.objects.all()
-    context_object_name = 'Personas'
+    context_object_name = 'Personas' #obtener el nombre personas
+#%$
 
 class Crear(CreateView):
     template_name = 'crud/crear.html'
