@@ -26,8 +26,8 @@ class Crear(CreateView):
         return reverse("personal_app:lista")
 
 class Editar(UpdateView):
-    template_name = 'crud/editar.html'
-    model = Personal
+    template_name = 'crud/editar.html'#Platilla para el crud 
+    model = Personal 
     form_class = Personalform
     pk_url_kwarg= 'pk'
 
@@ -37,7 +37,7 @@ class Editar(UpdateView):
 class Eliminar(DeleteView):#Clase de eliminar por pk
     template_name = "crud/eliminar.html"
     model =Personal
-    pk_url_kwarg ='pk'
+    pk_url_kwarg ='pk' #Elimina mediante le pk
 
     def get_success_url(self,**kwargs):
         return reverse('personal_app:lista')
