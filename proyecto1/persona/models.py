@@ -31,7 +31,7 @@ class Personal(DatosBase):#Extiende
     nom = models.CharField(max_length=50, verbose_name='Nombre', blank= False, null= False)
     ap = models.CharField(max_length=50, verbose_name='Apellido Materno', blank= False, null= False)
     am = models.CharField(max_length=50, verbose_name='Apellido Paterno', blank= False, null= False)
-    foto = models.ImageField(upload_to='imagenes/', verbose_name='Foto',blank=True, null=True)
+    foto = models.ImageField(upload_to='imagenes/', verbose_name='Foto',blank=True, null=True)#Campo para la foto
     area = models.ForeignKey(Area, verbose_name='Area', on_delete= models.CASCADE)
     estudios = models.ForeignKey(Estudios, verbose_name='Estudios', on_delete= models.CASCADE)
     carrera = models.CharField(max_length=30,verbose_name='Carrera',choices=carrera)

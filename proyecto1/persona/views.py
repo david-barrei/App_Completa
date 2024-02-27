@@ -40,5 +40,5 @@ class Eliminar(DeleteView):#Clase de eliminar por pk
     pk_url_kwarg ='pk' #Elimina mediante le pk
 
     def get_success_url(self,**kwargs):
-        return reverse('personal_app:lista')
+        return reverse('personal_app:lista') #Redirigir la aplicacion
 
